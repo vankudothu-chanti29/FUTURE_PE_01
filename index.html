@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dental Clinic Website Redesign</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f5f9ff;
+      color:#222;
+      line-height:1.6;
+    }
+
+    header{
+      background:#0b5ed7;
+      color:white;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:700;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:500;
+    }
+
+    .hero{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:80px 8%;
+      flex-wrap:wrap;
+      gap:40px;
+      background:white;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-size:48px;
+      color:#0b3d91;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      margin-bottom:30px;
+      color:#555;
+    }
+
+    .hero-buttons button{
+      padding:14px 28px;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+      margin-right:15px;
+      transition:0.3s;
+    }
+
+    .primary-btn{
+      background:#0b5ed7;
+      color:white;
+    }
+
+    .secondary-btn{
+      background:white;
+      border:2px solid #0b5ed7;
+      color:#0b5ed7;
+    }
+
+    .hero img{
+      width:450px;
+      max-width:100%;
+      border-radius:20px;
+    }
+
+    section{
+      padding:70px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:36px;
+      color:#0b3d91;
+      margin-bottom:10px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#0b5ed7;
+    }
+
+    .doctor-section{
+      display:flex;
+      align-items:center;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    .doctor-section img{
+      width:350px;
+      max-width:100%;
+      border-radius:20px;
+    }
+
+    .testimonial{
+      background:white;
+      padding:25px;
+      border-radius:16px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .cta-banner{
+      background:#0b5ed7;
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+      border-radius:20px;
+    }
+
+    .cta-banner h2{
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .cta-banner button{
+      padding:14px 30px;
+      border:none;
+      border-radius:10px;
+      background:white;
+      color:#0b5ed7;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .contact-form{
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      max-width:700px;
+      margin:auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:14px;
+      margin-bottom:20px;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-size:15px;
+    }
+
+    .contact-form button{
+      background:#0b5ed7;
+      color:white;
+      border:none;
+      padding:14px 28px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:16px;
+    }
+
+    footer{
+      background:#0b3d91;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:34px;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .doctor-section{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">SmileCare Dental</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>Comfortable & Affordable Dental Care for Your Family</h1>
+
+      <p>
+        Trusted by hundreds of happy patients. 
+        Modern dental treatments with experienced doctors 
+        and painless procedures.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn">Book Appointment</button>
+        <button class="secondary-btn">Call Now</button>
+      </div>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop" alt="Dental Clinic">
+
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Professional dental treatments for all ages</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Teeth Whitening</h3>
+        <p>Brighten your smile with safe and advanced whitening procedures.</p>
+      </div>
+
+      <div class="card">
+        <h3>Root Canal</h3>
+        <p>Painless root canal treatment using modern technology.</p>
+      </div>
+
+      <div class="card">
+        <h3>Dental Implants</h3>
+        <p>Permanent and natural-looking tooth replacement solutions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Braces</h3>
+        <p>Straighten your teeth with modern orthodontic care.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT DOCTOR -->
+  <section>
+
+    <div class="doctor-section">
+
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1200&auto=format&fit=crop" alt="Doctor">
+
+      <div>
+        <h2 style="font-size:36px;color:#0b3d91;margin-bottom:20px;">
+          Meet Our Expert Doctor
+        </h2>
+
+        <p style="margin-bottom:20px;">
+          Dr. Sarah Johnson has over 12 years of experience in family dentistry
+          and cosmetic treatments. Our clinic focuses on patient comfort,
+          modern care, and long-term oral health.
+        </p>
+
+        <button class="primary-btn">Learn More</button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+
+    <div class="section-title">
+      <h2>What Patients Say</h2>
+      <p>Trusted by local families and professionals</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="testimonial">
+        <p>
+          “Amazing experience! The doctors were friendly and professional.”
+        </p>
+        <h4 style="margin-top:15px;">★★★★★</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Very clean clinic and painless treatment. Highly recommended.”
+        </p>
+        <h4 style="margin-top:15px;">★★★★★</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Booked my appointment easily and the service was excellent.”
+        </p>
+        <h4 style="margin-top:15px;">★★★★★</h4>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA BANNER -->
+  <section>
+
+    <div class="cta-banner">
+
+      <h2>Need Immediate Dental Care?</h2>
+
+      <p style="margin-bottom:25px;">
+        Schedule your consultation today and get expert treatment.
+      </p>
+
+      <button>Schedule Consultation</button>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section>
+
+    <div class="section-title">
+      <h2>Book an Appointment</h2>
+      <p>Quick and easy appointment booking</p>
+    </div>
+
+    <div class="contact-form">
+
+      <input type="text" placeholder="Full Name">
+
+      <input type="email" placeholder="Email Address">
+
+      <input type="tel" placeholder="Phone Number">
+
+      <input type="text" placeholder="Required Service">
+
+      <textarea rows="5" placeholder="Message"></textarea>
+
+      <button>Submit Request</button>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 SmileCare Dental Clinic. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
